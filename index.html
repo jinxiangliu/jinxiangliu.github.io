@@ -1,63 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 transitional//EN"
-        "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+﻿
+
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>iframe</title>
-<link type="text/css" rel="stylesheet" href="styles/common.css" />
-<script type="text/javascript" language="javascript">
-	function goToPage()
-	{
-		document.getElementById("ifBrowser").setAttribute(
-				"src",
-				document.getElementById("txtUrl").getAttribute("value")
-			);
-	}
-</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=OYE4GDPNTE3jcx7Muyi5fpuq704RqTkx"></script>
+	<title>根据城市名设置地图中心点</title>
 </head>
-
 <body>
-
-<div id="container">
-	<h1>iframe</h1>
-    <br />
-    <br />
-	<h2>简单iframe示例</h2>
-	<table width="400" cellSpacing="0" cellPadding="12" align="center" border="0">
-		<tbody>
-			<tr>
-				<td width="200">
-					<iframe src="iframe/1.htm" width="200px" height="200px"></iframe>
-				</td>
-			    <td width="200">
-					<iframe src="iframe/2.htm" width="200px" height="200px"></iframe>
-				</td>
-			</tr>
-			<tr>
-			  <td>
-					<iframe src="iframe/3.htm" scrolling="no" width="200px" height="200px"></iframe>
-			  </td>
-		      <td>
-					<iframe src="iframe/4.htm" frameborder="0" width="200px" height="200px"></iframe>
-			  </td>
-		  </tr>
-		</tbody>
-	</table>
-    <br />
-    <br />
-    <br />
-    <br />
-	<h2>页内浏览器</h2>
-	<br />
-	<br />
-	<input type="text" id="txtUrl" size="40" value="http://" />
-	<input type="button" id="btnView" value="浏览" onclick="goToPage();" />
-	<br />
-	<br />
-	<iframe id="ifBrowser" src="about:blank" frameborder="1" width="450" height="450"></iframe>
-</div>
-
-<div id="footer">&nbsp;</div>
-
+	<div id="allmap"></div>
 </body>
 </html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");  // 创建Map实例
+	map.centerAndZoom("徐州",12);      // 初始化地图,用城市名设置地图中心点
+</script>
